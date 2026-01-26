@@ -1,0 +1,53 @@
+.todo-card{
+    border: 1px solid black;
+    margin: 10px 20px;
+    padding:  0 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.todo-item-container{
+background-color: aqua;
+height: 100%;
+overflow-y: scroll;
+
+
+}
+.todo-add-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 20px ;
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+
+}
+.input-todo{
+font-size: 20px ;
+padding:  5px 10px;
+margin-right: 10px;
+width: 400px;
+}
+
+.btn-todo{
+    font-size: 20px;
+    padding: 5px 15px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.img-delete-icon{
+    height: 20px;
+   cursor: pointer;
+}
+.img-edit-icon{
+    height: 20px;
+   cursor: pointer;
+   margin-right: 20px;
+}
