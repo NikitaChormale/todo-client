@@ -10,7 +10,7 @@ const [todos ,setTodos] = useState([]);
 const [oldtodo,setoldTodos] =useState([""]);
 const[editmode,seteditmode]= useState([false]);
 const [newtodo,setnewTodos] =useState([""]);
-const BASE_URL="http://localhost:8820";
+const BASE_URL="https://todo-server-zi8z.onrender.com";
 
  const loadTodos= async () => {
 console.log("loading todos....");
