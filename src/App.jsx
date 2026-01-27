@@ -15,7 +15,7 @@ const BASE_URL="https://todo-server-zi8z.onrender.com";
  const loadTodos= async () => {
 console.log("loading todos....");
 
-const response= await axios.get("http://localhost:8820/todos");
+const response= await axios.get(`${BASE_URL}/todos`);
 setTodos(response.data.data);
  };
 
