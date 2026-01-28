@@ -10,9 +10,7 @@ const [oldtodo,setoldTodos] =useState("");
 const[editmode,seteditmode]= useState(false);
 const [newtodo,setnewTodos] =useState("");
 
-const BASE_URL=import.meta.env.VITE_BASE_URL;
-
-console.log("BASE_URL =>",BASE_URL);
+const BASE_URL="https://todo-server-zi8z.onrender.com";
 const loadTodos= async () => {
 const response= await axios.get(`${BASE_URL}/todos`);
 setTodos(response.data.data);
@@ -60,7 +58,7 @@ loadTodos();
       {todos.map((todo,index) => {
         return(
           <div key={index} className='todo-card'>
-            <h3>{todo.todoitem}</h3>
+            <h3>{todo}</h3>
 
             <div>
              <img src={imgedit }
