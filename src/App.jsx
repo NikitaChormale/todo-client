@@ -1,16 +1,18 @@
+import axios from 'axios';
 
 import { useEffect, useState } from 'react';
 import './App.css';
-import axios from 'axios';
+
 import deleteicon from './delete- img.png'
 import imgedit from './editing.png'
 
 function App() {
 const [todos ,setTodos] = useState([]);
-const [oldtodo,setoldTodos] =useState([""]);
-const[editmode,seteditmode]= useState([false]);
-const [newtodo,setnewTodos] =useState([""]);
-const BASE_URL=import.meta.env.VITE_BASE_URL;
+const [oldtodo,setoldTodos] =useState("");
+const[editmode,seteditmode]= useState(false);
+const [newtodo,setnewTodos] =useState("");
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
  const loadTodos= async () => {
 console.log("loading todos....");
@@ -27,7 +29,7 @@ setTodos(response.data.data);
 setnewTodos("");
  };
  const editTodo=async()=>{
-  const response=await axios.put(`${BASE_URL}/todos`,{
+  const response=await axios.put(`${BASE_URL}/todos/${id}`,{
     oldtdoitem:oldtodo,
     newtodoitem:newtodo
   });
@@ -61,7 +63,7 @@ loadTodos();
       {todos.map((todo,index) => {
         return(
           <div key={index} className='todo-card'>
-            <h3>{todo}</h3>
+            <h3>{todo.todoitem}</h3>
 
             <div>
              <img src={imgedit }
