@@ -10,7 +10,7 @@ const [oldtodo,setoldTodos] =useState("");
 const[editmode,seteditmode]= useState(false);
 const [newtodo,setnewTodos] =useState("");
 
-const BASE_URL = "https://icp12-todo-servers.onrender.com";
+const BASE_URL=import.meta.env.VITE_BASE_URL;
 
 console.log("BASE_URL =>",BASE_URL);
 const loadTodos= async () => {
