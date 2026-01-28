@@ -10,7 +10,8 @@ const [oldtodo,setoldTodos] =useState("");
 const[editmode,seteditmode]= useState(false);
 const [newtodo,setnewTodos] =useState("");
 
-const BASE_URL = "https://todo-server-zi8z.onrender.com/todos";
+const BASE_URL = "https://icp12-todo-servers.onrender.com";
+
 console.log("BASE_URL =>",BASE_URL);
 const loadTodos= async () => {
 const response= await axios.get(`${BASE_URL}/todos`);
