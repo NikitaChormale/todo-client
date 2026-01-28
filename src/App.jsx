@@ -12,34 +12,27 @@ const [newtodo,setnewTodos] =useState("");
 
 const BASE_URL="https://todo-server-zi8z.onrender.com";
 const loadTodos= async () => {
-  
 const response= await axios.get(`${BASE_URL}/todos`);
 setTodos(response.data.data);
  };
 
  const addtodos= async ()=> {
-   if (!newtodo.trim()) {
-    return; // ❌ stop if input is empty
-  }
+  if (!newtodo.trim()) return; // ❌ empty block
   const response= await axios.post(`${BASE_URL}/todos`,{
     todoitem: newtodo,
   });
-  loadTodos( );
+  loadTodos();
 setnewTodos("");
  };
  const editTodo=async()=>{
-  if (!newtodo.trim()) {
-    return; // ❌ stop if input is empty
-  }
-  const response=await axios.put(`${BASE_URL}/todos/${id}`,{
-    oldtdoitem:oldtodo,
+  const response=await axios.put(`${BASE_URL}/todos`,{
+    oldtodoitem:oldtodo,
     newtodoitem:newtodo
   });
   loadTodos();
   seteditmode(false);
   setnewTodos("");
   setoldTodos("");
-   setEditId(null);
 
  };
  
