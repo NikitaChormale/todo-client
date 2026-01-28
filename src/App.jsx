@@ -1,22 +1,18 @@
-import axios from 'axios';
-
+import React from 'react';
 import { useEffect, useState } from 'react';
-import './App.css';
-
 import deleteicon from './delete- img.png'
 import imgedit from './editing.png'
-
+import './App.css';
+import axios from 'axios';
 function App() {
 const [todos ,setTodos] = useState([]);
 const [oldtodo,setoldTodos] =useState("");
 const[editmode,seteditmode]= useState(false);
 const [newtodo,setnewTodos] =useState("");
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
-
- const loadTodos= async () => {
-console.log("loading todos....");
-
+const BASE_URL = "https://todo-server-zi8z.onrender.com/todos";
+console.log("BASE_URL =>",BASE_URL);
+const loadTodos= async () => {
 const response= await axios.get(`${BASE_URL}/todos`);
 setTodos(response.data.data);
  };
