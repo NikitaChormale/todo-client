@@ -12,6 +12,9 @@ const [newtodo,setnewTodos] =useState("");
 
 const BASE_URL="https://todo-server-zi8z.onrender.com";
 const loadTodos= async () => {
+   if (!newtodo.trim()) {
+    return; // ❌ stop if input is empty
+  }
 const response= await axios.get(`${BASE_URL}/todos`);
 setTodos(response.data.data);
  };
@@ -24,6 +27,9 @@ setTodos(response.data.data);
 setnewTodos("");
  };
  const editTodo=async()=>{
+   if (!newtodo.trim()) {
+    return; // ❌ stop if input is empty
+  }
   const response=await axios.put(`${BASE_URL}/todos/${id}`,{
     oldtdoitem:oldtodo,
     newtodoitem:newtodo
